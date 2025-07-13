@@ -26,7 +26,7 @@ class CustomerCollection{
 		}
 	}
 	
-	public void add(Customer data){addLast(data);}
+	public void add(Customer data){addLast(data);System.out.println("Sutdent successfully added");}
 	
 	public void add(int index, Customer data){
 		if(index >= 0 && index <= size()){
@@ -100,6 +100,7 @@ class CustomerCollection{
 	public void remove(){removeFirst();}
 	
 	public int indexOf(String phoneNum){
+		System.out.println(phoneNum + "from ide");
 		int count = 0;
 		Node temp = first;
 		while(temp != null){

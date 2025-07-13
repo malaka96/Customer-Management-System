@@ -67,7 +67,9 @@ class AddCustomer extends JPanel{
 		addButton = new JButton("Add Customer");
 		addButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent evt){
-				//layout.show(parentPanel,"add");
+				System.out.println("add button is pressed");
+				Customer data = new Customer(phoneNumTf.getText(),nameTf.getText(),addressTf.getText(),emailTf.getText());
+				collection.add(data);
 			}
 		});
 		addButtonPanel.add(addButton);

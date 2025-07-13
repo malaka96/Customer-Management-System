@@ -20,7 +20,11 @@ class SearchCustomer extends JPanel{
 	JButton searchButton;
 	JButton deleteButton;
 	
-	SearchCustomer(CardLayout layout, JPanel parentPanel){
+	CustomerCollection collection;
+	
+	SearchCustomer(CardLayout layout, JPanel parentPanel, CustomerCollection collection){
+		this.collection = collection;
+		
 		setLayout(new BorderLayout());
 		
 		title = new JLabel("Search Customer");
@@ -35,7 +39,17 @@ class SearchCustomer extends JPanel{
 		searchButton = new JButton("Search Customer");
 		searchButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent evt){
-				//layout.show(parentPanel,"search");
+				Customer data = collection.get(collection.indexOf(searchTf.getText()));
+				//System.out.println(phoneNumTf.getText() + "from search");
+				if(data == null){System.out.println("data obj is null");return;}
+					
+				System.out.println(data.getName());
+				phoneNumTf.setText(data.getPhoneNum());
+				nameTf.setText(data.getName());
+				addressTf.setText(data.getAddress());
+				emailTf.setText(data.getEmail());
+				
+				deleteButton.setEnabled(true);
 			}
 		});
 		searchPanel.add(searchTf);
@@ -75,7 +89,8 @@ class SearchCustomer extends JPanel{
 		deleteButton.setEnabled(false);
 		deleteButton.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent evt){
-				//layout.show(parentPanel,"home");
+				collection.remove(collection.indexOf(searchTf.getText()));
+				deleteButton.setEnabled(false);
 			}
 		});
 		deleteButtonPanel.add(deleteButton);

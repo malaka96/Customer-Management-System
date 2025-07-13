@@ -8,6 +8,7 @@ class HomePage extends JPanel{
 	JButton addButton;
 	JButton searchButton;
 	
+	
 	HomePage(CardLayout layout, JPanel parentPanel){
 		setLayout(new BorderLayout());
 		

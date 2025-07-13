@@ -18,7 +18,7 @@ class CustomerManagement{
 		
 		panel.add(new HomePage(layout,panel),"home");
 		panel.add(new AddCustomer(layout,panel,collection),"add");
-		panel.add(new SearchCustomer(layout,panel),"search");
+		panel.add(new SearchCustomer(layout,panel,collection),"search");
 		
 		frame.add(panel);
 		

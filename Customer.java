@@ -19,8 +19,8 @@ class Customer{
 	
 	public String getPhoneNum(){return this.phoneNum;}
 	public String getName(){return this.name;}
-	public String address(){return this.address;}
-	public String email(){return this.email;}
+	public String getAddress(){return this.address;}
+	public String getEmail(){return this.email;}
 
 	public String toString(){
 		String data = "("+phoneNum+","+name+","+address+","+email+")";
